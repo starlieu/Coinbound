@@ -18,7 +18,7 @@ function readGame(): Game {
     return { ...initialGame, ...saved, holdings: { ...initialGame.holdings, ...(saved.holdings ?? {}) } };
   } catch { return initialGame; }
 }
-function App() {
+export default function App() {
   const [game, setGame] = useState<Game>(readGame);
   const [prices, setPrices] = useState(() => Object.fromEntries(assets.map(a => [a.ticker, a.initial])) as Record<string, number>);
   const [selected, setSelected] = useState<Asset | null>(null);
