@@ -1,0 +1,10 @@
+{
+  "name": "Coinbound — Le marché est à toi",
+  "short_name": "Coinbound",
+  "description": "Un jeu de trading virtuel, de cartes et de stratégie. Aucune valeur réelle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1018",
+  "theme_color": "#0b1018",
+  "icons": []
+}
