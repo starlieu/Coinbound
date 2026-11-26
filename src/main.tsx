@@ -3,12 +3,12 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './styles.css';
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode><App /></React.StrictMode>,
-);
+const root = document.getElementById('root');
+if (!root) throw new Error('Coinbound: élément #root introuvable.');
 
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(console.error);
-  });
+try {
+  createRoot(root).render(<React.StrictMode><App /></React.StrictMode>);
+} catch (error) {
+  console.error('Coinbound n’a pas pu démarrer :', error);
+  root.innerHTML = '<main class="fatal"><div class="fatal-card"><div class="boot-mark">C</div><h1>Coinbound</h1><p>Le jeu n’a pas pu démarrer. Recharge la page ou réessaie plus tard.</p></div></main>';
 }
