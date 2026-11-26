@@ -1,6 +1,6 @@
 # Coinbound
 
-Coinbound est un jeu local gratuit de trading simulé et de collection. Les cours, devises, portefeuilles, badges, utilisateurs et annonces sont fictifs ; aucune valeur réelle n'est échangée. Aucun portefeuille blockchain ni service financier n'est connecté.
+Coinbound est un jeu gratuit de trading virtuel multijoueur. Les cours, coins et crédits CB sont fictifs ; aucun paiement ni argent réel n’est échangé.
 
 ## Démarrage
 
@@ -9,12 +9,8 @@ Coinbound est un jeu local gratuit de trading simulé et de collection. Les cour
 - `npm run build`
 - `npm run preview`
 
-Les cours et taux fictifs évoluent toutes les deux secondes. Les données sont conservées dans le `localStorage` du navigateur. Les profils, équipes, classements et annonces restent locaux à cet appareil — il n'y a pas de backend ni de visibilité entre joueurs.
+Le site utilise JavaScript (ES modules), React et Vite. Le build ne dépend plus de TypeScript. Les comptes, cours du marché, portefeuilles, équipes, annonces et échanges utilisent Supabase ; vérifie la configuration/migrations dans `supabase/`.
 
-## Rôles locaux
+## Publication
 
-Le premier profil est Owner. Le panneau Admin local permet au Owner/Admin de gérer les rôles, badges et profils enregistrés ; Developer dispose de l'accès en lecture. Les permissions sont une convention d'interface uniquement, sans sécurité serveur. Les utilisateurs ajoutés sont des profils de démonstration dans le stockage local, pas des comptes authentifiés.
-
-## Déploiement
-
-Le workflow `.github/workflows/static.yml` construit et déploie sur GitHub Pages. Le chemin de base `/Coinbound/` est activé en CI. L'application est installable en PWA et inclut un manifest, un service worker et une icône SVG.
+Le workflow `.github/workflows/static.yml` publie le site sur GitHub Pages. Le chemin `/Coinbound/` est configuré pour le build CI. La PWA et son service worker restent disponibles.
