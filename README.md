@@ -4,12 +4,11 @@ Coinbound est un jeu gratuit de trading virtuel multijoueur. Les cours, coins et
 
 ## Démarrage
 
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
+- Python 3 suffit pour lancer un serveur local :
+  - `python3 -m http.server 8000`
+  - ouvre `http://localhost:8000`
 
-Le site utilise JavaScript (ES modules), React et Vite. Le build ne dépend pas de TypeScript.
+Le site est écrit en HTML5, CSS et JavaScript natifs avec des modules ES. Il n’a pas de dépendances à installer ni d’étape de compilation.
 
 ## Configuration Supabase
 
@@ -21,4 +20,4 @@ Les scripts fournissent l’inscription/connexion, le profil, le marché, les ac
 
 ## Publication
 
-Le workflow `.github/workflows/static.yml` publie le site sur GitHub Pages. Le chemin `/Coinbound/` est configuré pour le build CI. La PWA met en cache la coque du site ; les opérations de jeu nécessitent une connexion et le backend Supabase.
+Publie la racine du dépôt avec GitHub Pages, sans étape de build. La PWA met en cache la coque du site ; les opérations de jeu nécessitent une connexion et le backend Supabase.

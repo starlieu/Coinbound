@@ -2,10 +2,10 @@
   "name": "Coinbound — jeu de marché virtuel",
   "short_name": "Coinbound",
   "description": "Simulation gratuite de trading virtuel et d’équipes, sans argent réel.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "../",
+  "scope": "../",
   "display": "standalone",
-  "background_color": "#0b1018",
-  "theme_color": "#0b1018",
+  "background_color": "#0b1110",
+  "theme_color": "#0b1110",
   "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
 }
