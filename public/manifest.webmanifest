@@ -1,7 +1,7 @@
 {
   "name": "Coinbound — jeu de marché virtuel",
   "short_name": "Coinbound",
-  "description": "Simulation gratuite de trading, collection et équipes, sans argent réel.",
+  "description": "Simulation gratuite de trading virtuel et d’équipes, sans argent réel.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
