@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { magicLink, oauth, resetPassword, signIn, signInAnonymously, signUp } from './supabase.js';
 const titles = { signin: 'Bienvenue', signup: 'Créer un compte', magic: 'Connexion par lien', reset: 'Réinitialiser le mot de passe' };
-export default function Login({ onGuest }) {
+export default function Login() {
   const [mode, setMode] = useState('signin'), [email, setEmail] = useState(''), [password, setPassword] = useState(''), [username, setUsername] = useState(''), [info, setInfo] = useState(''), [error, setError] = useState(''), [busy, setBusy] = useState(false);
   async function submit(event) {
     event.preventDefault(); setError(''); setInfo(''); setBusy(true);
@@ -12,7 +12,7 @@ export default function Login({ onGuest }) {
       else { await resetPassword(email); setInfo('Email de réinitialisation envoyé.'); }
     } catch (err) { setError(err instanceof Error ? err.message : 'Une erreur est survenue.'); } finally { setBusy(false); }
   }
-  async function guest() { setError(''); setBusy(true); try { await signInAnonymously(); } catch { onGuest(); } finally { setBusy(false); } }
+  async function guest() { setError(''); setBusy(true); try { await signInAnonymously(); } catch (err) { setError(err instanceof Error ? err.message : 'La connexion invité a échoué.'); } finally { setBusy(false); } }
   return <main className="auth-wrap"><section className="auth-card"><a className="brand" href="#">◈ coinbound<span className="green-period">.</span></a><div className="auth-intro"><span className="eyebrow">UN MARCHÉ. UNE COMMUNAUTÉ.</span><h1>{titles[mode]}<span className="green-period">.</span></h1><p>Un jeu de trading virtuel, simple et gratuit.</p></div><form onSubmit={submit} className="auth-form">
     {mode === 'signup' && <label>Pseudo<input value={username} onChange={(e) => setUsername(e.target.value)} required minLength={3} maxLength={20} autoComplete="nickname" /></label>}
     <label>Email<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" /></label>
