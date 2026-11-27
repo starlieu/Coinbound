@@ -1,4 +1,4 @@
--- Exécuter dans Supabase SQL Editor après schema.sql.
+-- Exécuter dans Supabase SQL Editor après schema.sql, puis multiplayer_moderation.sql.
 -- Le client public ne peut pas altérer soldes/cours : toutes les mutations passent par RPC.
 create table if not exists public.market_coins (
   ticker text primary key check (ticker ~ '^[A-Z0-9]{2,8}$'), name text not null,

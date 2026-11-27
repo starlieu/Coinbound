@@ -1,5 +1,5 @@
 -- Exécuter dans Supabase : SQL Editor > New query > Run.
--- Schéma d'authentification. Pour le mode multijoueur, exécuter ensuite multiplayer.sql.
+-- Schéma d'authentification. Puis exécuter multiplayer.sql et multiplayer_moderation.sql.
 create type public.app_role as enum ('Owner','Developer','Admin','Moderator','Player');
 create table public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
